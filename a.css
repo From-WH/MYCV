@@ -28,7 +28,7 @@ a{
     border-bottom: 3px solid rgb(232,103,107);
 }
 .TopNavBar{
-    padding: 16px 16px;
+    padding: 16px 16px 15px 16px;
 }
 .TopNavBar .logo{
     float: left;
