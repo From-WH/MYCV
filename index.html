@@ -4,6 +4,7 @@
 <head>
     <title>我的简历</title>
     <link rel="stylesheet" href="./a.css">
+    <link rel="stylesheet" href="loading.css">
     <script src="//at.alicdn.com/t/font_601955_0und87zok42qehfr.js"></script>
     <style type="text/css">
         .icon {
@@ -17,7 +18,10 @@
 </head>
 
 <body>
-    <div class="TopNavBar">
+    <div id="sitewelcome" class="sitewelcome active">
+        <div class="loading"></div>
+    </div>
+    <div id="TopNavBar" class="TopNavBar">
         <div class="TopNavBar-ine clearfix">
             <a class="logo" href="#" alt="logo">
                 <span class="rs">RS</span>
@@ -130,7 +134,7 @@
             <li>
                 <h3>js</h3>
                 <div class="progressbar">
-                    <div class="progress"style="width:70%"></div>
+                    <div class="progress" style="width:70%"></div>
                 </div>
                 <div class="bar"></div>
             </li>
@@ -163,13 +167,13 @@
             </div>
         </nav>
         <script>
-            portfolio1.onclick= function(){
+            portfolio1.onclick = function () {
                 portfolioBar.className = 'bar state-1'
             }
-            portfolio2.onclick = function(){
+            portfolio2.onclick = function () {
                 portfolioBar.className = 'bar state-2'
             }
-            portfolio3.onclick = function(){
+            portfolio3.onclick = function () {
                 portfolioBar.className = 'bar state-3'
             }
         </script>
@@ -185,6 +189,18 @@
             </div>
         </div>
     </section>
+    <script>
+        setTimeout(function () {
+            sitewelcome.classList.remove('active')
+        }, 1500);
+    window.onscroll = function (xxx) {
+        if (window.scrollY > 0) {
+            TopNavBar.classList.add('stick')
+        }else{
+            TopNavBar.classList.remove('stick')
+        }
+    }
+    </script>
 </body>
 
 </html>
