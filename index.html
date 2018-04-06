@@ -27,16 +27,26 @@
                 <span class="rs">RS</span>
                 <span class="card">card</span>
             </a>
-            <nav class="clearfix" style="float:right">
+            <nav class="clearfix menu" style="float:right">
                 <ul class="clearfix">
                     <li>
                         <a href="#">关于</a>
                     </li>
-                    <li>
+                    <li class="menuTigger">
                         <a href="#">技能</a>
+                        <ul class="sebmenu">
+                            <li>作品1</li>
+                            <li>作品2</li>
+                            <li>作品3</li>
+                        </ul>
                     </li>
-                    <li>
+                    <li class="menuTigger">
                         <a href="#">作品</a>
+                        <ul class="sebmenu">
+                            <li>作品1</li>
+                            <li>作品2</li>
+                            <li>作品3</li>
+                        </ul>
                     </li>
                     <li>
                         <a href="#">博客</a>
@@ -192,14 +202,23 @@
     <script>
         setTimeout(function () {
             sitewelcome.classList.remove('active')
-        }, 1500);
-    window.onscroll = function (xxx) {
-        if (window.scrollY > 0) {
-            TopNavBar.classList.add('stick')
-        }else{
-            TopNavBar.classList.remove('stick')
+        }, );
+        window.onscroll = function (xxx) {
+            if (window.scrollY > 0) {
+                TopNavBar.classList.add('stick')
+            } else {
+                TopNavBar.classList.remove('stick')
+            }
         }
-    }
+        let liTags = document.querySelectorAll('nav.menu > ul >li  ')
+        for (let i = 0; i < liTags.length; i++) {
+            liTags[i].onmouseenter = function (xx) {
+                let li = xx.currentTarget.classList.add('active')
+            }
+            liTags[i].onmouseleave = function (xx) {
+                let li = xx.currentTarget.classList.remove('active')
+            }
+        }       
     </script>
 </body>
 
