@@ -30,10 +30,10 @@
             <nav class="clearfix menu" style="float:right">
                 <ul class="clearfix">
                     <li>
-                        <a href="#">关于</a>
+                        <a href="#siteAbout">关于</a>
                     </li>
                     <li class="menuTigger">
-                        <a href="#">技能</a>
+                        <a href="#siteKills">技能</a>
                         <ul class="sebmenu">
                             <li>作品1</li>
                             <li>作品2</li>
@@ -41,7 +41,7 @@
                         </ul>
                     </li>
                     <li class="menuTigger">
-                        <a href="#">作品</a>
+                        <a href="#siteWorks">作品</a>
                         <ul class="sebmenu">
                             <li>作品1</li>
                             <li>作品2</li>
@@ -69,7 +69,7 @@
         <div class="yinying"></div>
     </div>
     <main>
-        <div class="big">
+        <div id="siteAbout" class="big">
             <div class="usercard clearfix">
                 <div class="picture">
                     <img src="./img/zhaopian.jpg" alt="头像">
@@ -117,7 +117,7 @@
         <p class="introduction">王航，Web前端工程师，拥有丰富的网页开发经验，能够独立完成网页及后台交互工作，
             <br>技能：html制作，熟练使用CSS、js，熟悉Vue框架</p>
     </main>
-    <section class="skill">
+    <section id="siteKills" class="skill">
         <h2>技能</h2>
         <ol class="clearfix">
             <li>
@@ -164,7 +164,7 @@
             </li>
         </ol>
     </section>
-    <section class="portfolio">
+    <section id="siteWorks" class="portfolio">
         <h2>作品集</h2>
         <nav>
             <ol class="clearfix">
@@ -218,7 +218,18 @@
             liTags[i].onmouseleave = function (xx) {
                 let li = xx.currentTarget.classList.remove('active')
             }
-        }       
+        }
+        let aTags = document.querySelectorAll('nav.menu > ul > li > a')
+        for (let i = 0; i < aTags.length; i++) {
+            aTags[i].onclick = function (x) {
+                x.preventDefault() //阻止默认动作
+                let a = x.currentTarget //获取点击元素
+                let href = a.getAttribute('href') // 'siteAbout'
+                let element = document.querySelector(href)
+                let top = element.offsetTop
+                window.scrollTo(0 , top - 80)
+            }
+        }
     </script>
 </body>
 
