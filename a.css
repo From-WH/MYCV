@@ -54,7 +54,7 @@ hr{
     background: white;
     padding: 10px 0 15px;
     color: #3d4451;
-    z-index: 3;
+    z-index: 1;
 }
 .TopNavBar nav>ul>li{
     float: left;
