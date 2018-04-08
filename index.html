@@ -35,17 +35,20 @@
                     <li class="menuTigger">
                         <a href="#siteKills">技能</a>
                         <ul class="sebmenu">
-                            <li>作品1</li>
-                            <li>作品2</li>
-                            <li>作品3</li>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>JavaScript</li>
+                            <li>AJax</li>
+                            <li>VUE</li>
+                            <li>VUE</li>
                         </ul>
                     </li>
                     <li class="menuTigger">
                         <a href="#siteWorks">作品</a>
                         <ul class="sebmenu">
-                            <li>作品1</li>
-                            <li>作品2</li>
-                            <li>作品3</li>
+                            <li>作品</li>
+                            <li>框架</li>
+                            <li>原生JS</li>
                         </ul>
                     </li>
                     <li>
@@ -94,12 +97,12 @@
                 </div>
             </div>
             <footer class="media">
-                <a href="#">
+                <a href="https://github.com/From-WH" target="_blank">
                     <svg class="icon" aria-hidden="true">
                         <use xlink:href="#icon-github"></use>
                     </svg>
                 </a>
-                <a href="#">
+                <a href="https://weibo.com/3867389818/profile?topnav=1&wvr=6" target="_blank">
                     <svg class="icon" aria-hidden="true">
                         <use xlink:href="#icon-weibo"></use>
                     </svg>
@@ -241,13 +244,13 @@
         }
 
         //如何实现 鼠标悬停弹出菜单
-        let liTags = document.querySelectorAll('nav.menu > ul >li  ')
+        let liTags = document.getElementsByClassName('menuTigger')
         for (let i = 0; i < liTags.length; i++) {
             liTags[i].onmouseenter = function (xx) {
-                let li = xx.currentTarget.classList.add('active')
+                xx.currentTarget.classList.add('active')
             }
             liTags[i].onmouseleave = function (xx) {
-                let li = xx.currentTarget.classList.remove('active')
+                xx.currentTarget.classList.remove('active')
             }
         }
 
