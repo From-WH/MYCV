@@ -25,11 +25,11 @@ hr{
     border-top: 1px solid #DEDEDE;
 }
 [data-x].offset{
-    transform: translateY(300px);
+    transform: translateY(200px);
 }
 [data-x]{
     transform: translateY(0);
-    transition: all 0.5s;
+    transition: all 1s;
 }
 .sitewelcome{
     display: none;
@@ -288,6 +288,7 @@ body > .skill > ol > li .progressbar{
     background: rgb(250, 224, 224);
     margin-top: 2px;
     margin-bottom: 40px;
+    overflow: hidden;
 }
 body > .skill > ol > li:nth-child(even){
     float: right;
@@ -297,6 +298,11 @@ body > .skill > ol > li .progress{
     height: 100%;
     border-radius: 3px;
     background-color: rgb(232,103,107);
+    transform: translateX(0);
+    transition: all 0.7s;
+}
+.skill.offset .progress{
+    transform: translateX(-100%);
 }
 body .portfolio{
     max-width: 940px;
