@@ -69,7 +69,7 @@
         <div class="yinying"></div>
     </div>
     <main>
-        <div id="siteAbout" class="big">
+        <div data-x id="siteAbout" class="big">
             <div class="usercard clearfix">
                 <div class="picture">
                     <img src="./img/zhaopian.jpg" alt="头像">
@@ -117,7 +117,7 @@
         <p class="introduction">王航，Web前端工程师，拥有丰富的网页开发经验，能够独立完成网页及后台交互工作，
             <br>技能：html制作，熟练使用CSS、js，熟悉Vue框架</p>
     </main>
-    <section id="siteKills" class="skill">
+    <section data-x id="siteKills" class="skill">
         <h2>技能</h2>
         <ol class="clearfix">
             <li>
@@ -164,7 +164,7 @@
             </li>
         </ol>
     </section>
-    <section id="siteWorks" class="portfolio">
+    <section data-x id="siteWorks" class="portfolio">
         <h2>作品集</h2>
         <nav>
             <ol class="clearfix">
@@ -206,6 +206,10 @@
             sitewelcome.classList.remove('active')
         }, 1000);
 
+        let specialTags = document.querySelectorAll('[data-x]')  //返回[data-x]元素列表
+        for (let i = 0; i < specialTags.length; i++) {
+            specialTags[i].classList.add('offset')
+            }
         //如何实现topNavBar的下拉后高亮
         window.onscroll = function (xxx) {
             if (window.scrollY > 0) {
@@ -213,7 +217,24 @@
             } else {
                 TopNavBar.classList.remove('stick')
             }
+            let specialTags = document.querySelectorAll('[data-x]')  //返回[data-x]元素列表
+            let minindex = 0
+            for (let i = 1; i < specialTags.length; i++) {
+                if (Math.abs(specialTags[i].offsetTop - window.scrollY) < Math.abs(specialTags[minindex].offsetTop - window.scrollY)) {
+                    minindex = i
+                }   // 距离窗口最近的元素
+            }
+            specialTags[minindex].classList.remove('offset')
+            let id = specialTags[minindex].id
+            let a = document.querySelector('a[href="#' + id + '"]')
+            let li = a.parentNode
+            let brotherAndMe = li.parentNode.children
+            for (let i = 0; i < brotherAndMe.length; i++) {
+                brotherAndMe[i].classList.remove('aaa')
+            }
+            li.classList.add('aaa')
         }
+
         //如何实现 鼠标悬停弹出菜单
         let liTags = document.querySelectorAll('nav.menu > ul >li  ')
         for (let i = 0; i < liTags.length; i++) {
@@ -232,7 +253,7 @@
             requestAnimationFrame(animate);
             TWEEN.update(time);
         }
-        requestAnimationFrame(animate);        
+        requestAnimationFrame(animate);
 
         for (let i = 0; i < aTags.length; i++) {
             aTags[i].onclick = function (x) {
@@ -242,7 +263,7 @@
                 let element = document.querySelector(href)
                 let top = element.offsetTop
 
-                let currentTop = window.scrollY     //跳转前的位置
+                let currentTop = window.scrollY     //文档在垂直方向已滚动的像素值
                 let targetTop = top - 80            //需要跳转到的位置
                 let s = targetTop - currentTop      // 位置差=跳转的位置-跳转前的位置
                 var coords = { y: currentTop };     //跳转前的视口的位置

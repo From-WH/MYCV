@@ -24,6 +24,13 @@ hr{
     border: none;
     border-top: 1px solid #DEDEDE;
 }
+[data-x].offset{
+    transform: translateY(300px);
+}
+[data-x]{
+    transform: translateY(0);
+    transition: all 0.5s;
+}
 .sitewelcome{
     display: none;
     background: gray;
@@ -74,7 +81,8 @@ hr{
     padding-bottom: 5px;
     font-weight: bold;
 }
-.TopNavBar nav > ul > li.active > a::after{
+.TopNavBar nav > ul > li.active > a::after,
+.TopNavBar nav > ul > li.aaa > a::after{
     position: absolute;
     display: block;
     content: "";
