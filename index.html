@@ -210,7 +210,7 @@
         }, 1000);
         setTimeout(function () {
             yyy()
-        },1000);
+        }, 1000);
         let specialTags = document.querySelectorAll('[data-x]')  //返回[data-x]元素列表
         for (let i = 0; i < specialTags.length; i++) {
             specialTags[i].classList.add('offset')
@@ -242,7 +242,6 @@
             }
             li.classList.add('aaa')
         }
-
         //如何实现 鼠标悬停弹出菜单
         let liTags = document.getElementsByClassName('menuTigger')
         for (let i = 0; i < liTags.length; i++) {
@@ -253,7 +252,6 @@
                 xx.currentTarget.classList.remove('active')
             }
         }
-
         //如何实现页面跳转
         let aTags = document.querySelectorAll('nav.menu > ul > li > a')
         //这五行是抄的
@@ -262,7 +260,6 @@
             TWEEN.update(time);
         }
         requestAnimationFrame(animate);
-
         for (let i = 0; i < aTags.length; i++) {
             aTags[i].onclick = function (x) {
                 x.preventDefault() //阻止默认动作
@@ -270,7 +267,6 @@
                 let href = a.getAttribute('href') // 'siteAbout'
                 let element = document.querySelector(href)
                 let top = element.offsetTop
-
                 let currentTop = window.scrollY     //文档在垂直方向已滚动的像素值
                 let targetTop = top - 80            //需要跳转到的位置
                 let s = targetTop - currentTop      // 位置差=跳转的位置-跳转前的位置
