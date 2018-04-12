@@ -207,13 +207,13 @@
         //实现进入页面的loading
         setTimeout(function () {
             sitewelcome.classList.remove('active')
-        }, 1000);
+        }, 1000);          //loading动画1秒
         setTimeout(function () {
             yyy()
-        }, 1000);
+        }, 1000);         // 内容浮动一秒内完成
         let specialTags = document.querySelectorAll('[data-x]')  //返回[data-x]元素列表
         for (let i = 0; i < specialTags.length; i++) {
-            specialTags[i].classList.add('offset')
+            specialTags[i].classList.add('offset')         // 当滑动到最近下一个一个元素时，触发标签上浮
         }
         //如何实现topNavBar的下拉后高亮
         window.onscroll = function (xxx) {
@@ -224,6 +224,7 @@
             }
             yyy()
         }
+        // 高亮当前元素
         function yyy() {
             let specialTags = document.querySelectorAll('[data-x]')  //返回[data-x]元素列表
             let minindex = 0
@@ -242,6 +243,7 @@
             }
             li.classList.add('aaa')
         }
+
         //如何实现 鼠标悬停弹出菜单
         let liTags = document.getElementsByClassName('menuTigger')
         for (let i = 0; i < liTags.length; i++) {
