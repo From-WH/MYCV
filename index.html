@@ -3,17 +3,13 @@
 
 <head>
     <title>我的简历</title>
-    <link rel="stylesheet" href="./a.css">
     <link rel="stylesheet" href="loading.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.2/css/swiper.min.css">
+    <link rel="stylesheet" href="./a.css">
     <script src="//at.alicdn.com/t/font_601955_0und87zok42qehfr.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.2/js/swiper.min.js"></script>
     <style type="text/css">
-        .icon {
-            width: 1em;
-            height: 1em;
-            vertical-align: -0.15em;
-            fill: currentColor;
-            overflow: hidden;
-        }
+
     </style>
 </head>
 
@@ -169,16 +165,6 @@
     </section>
     <section data-x id="siteWorks" class="portfolio">
         <h2>作品集</h2>
-        <nav>
-            <ol class="clearfix">
-                <li id="portfolio1">所有</li>
-                <li id="portfolio2">框架</li>
-                <li id="portfolio3">原生JS</li>
-            </ol>
-            <div id="portfolioBar" class="bar state-1">
-                <div class="bartwo"></div>
-            </div>
-        </nav>
         <script>
             portfolio1.onclick = function () {
                 portfolioBar.className = 'bar state-1'
@@ -190,17 +176,21 @@
                 portfolioBar.className = 'bar state-3'
             }
         </script>
-        <div class="jobs">
-            <div class="big2">
-                <img src="./img/1.jpg" alt="作品1">
+        <div class="swiper-container">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <img class="swiper-slide" src="./img/canvas.jpg">
+                <img class="swiper-slide" src="./img/nav.jpg">
+                <img class="swiper-slide" src="./img/slides.jpg">
             </div>
-            <div class="small">
-                <img src="./img/2.jpg" alt="作品2">
-            </div>
-            <div class="small2">
-                <img src="./img/3.jpg" alt="作品3">
-            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need navigation buttons -->
         </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
     </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/16.3.5/Tween.min.js"></script>
     <script>
@@ -284,6 +274,22 @@
                     .start();        //   立即开始跳转
             }
         }
+    </script>
+    <script>
+        var mySwiper = new Swiper('.swiper-container', {
+            loop: true,
+
+            // If we need pagination
+            pagination: {
+                el: '.swiper-pagination',
+            },
+
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        })
     </script>
 </body>
 
