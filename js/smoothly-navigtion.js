@@ -1,18 +1,23 @@
 //如何实现页面跳转
 !function () {
-    let aTags = document.querySelectorAll('nav.menu > ul > li > a')
-    //这五行是抄的
-    function animate(time) {
-        requestAnimationFrame(animate);
-        TWEEN.update(time);
-    }
-    requestAnimationFrame(animate);
-    for (let i = 0; i < aTags.length; i++) {
-        aTags[i].onclick = function (x) {
-            x.preventDefault() //阻止默认动作
-            let a = x.currentTarget //获取点击元素
-            let href = a.getAttribute('href') // 'siteAbout'
-            let element = document.querySelector(href)
+    var view = document.querySelector('nav.menu')
+    var controller = {
+        view: null,
+        aTags: null,
+        init: function (view) {
+            this.view = view
+            this.initAnimation()
+            this.bindEvents()
+        },
+        initAnimation: function () {
+            animate: function animate(time) {
+                requestAnimationFrame(animate);
+                TWEEN.update(time);
+            }
+            requestAnimationFrame(animate);
+        },
+        scrollToElement:function (element) {
+
             let top = element.offsetTop
             let currentTop = window.scrollY     //文档在垂直方向已滚动的像素值
             let targetTop = top - 80            //需要跳转到的位置
@@ -27,6 +32,20 @@
                     window.scrollTo(0, coords.y)     //跳转的位置
                 })
                 .start();        //   立即开始跳转
-        }
-    }   
+        },
+        bindEvents: function (view) {
+            var view = this.view
+            let aTags = this.view.querySelectorAll('nav.menu > ul > li > a')
+            for (let i = 0; i < aTags.length; i++) {
+                aTags[i].onclick = (x)=> {
+                    x.preventDefault() //阻止默认动作
+                    let a = x.currentTarget //获取点击元素
+                    let href = a.getAttribute('href') // 'siteAbout'
+                    let element = document.querySelector(href)
+                    this.scrollToElement(element)
+                }
+            }
+        },
+    }
+    controller.init(view)
 }.call()

@@ -9,7 +9,6 @@
     <script src="//at.alicdn.com/t/font_601955_0und87zok42qehfr.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.2/js/swiper.min.js"></script>
     <style type="text/css">
-
     </style>
 </head>
 
@@ -165,32 +164,19 @@
     </section>
     <section data-x id="siteWorks" class="portfolio">
         <h2>作品集</h2>
-        <script>
-            portfolio1.onclick = function () {
-                portfolioBar.className = 'bar state-1'
-            }
-            portfolio2.onclick = function () {
-                portfolioBar.className = 'bar state-2'
-            }
-            portfolio3.onclick = function () {
-                portfolioBar.className = 'bar state-3'
-            }
-        </script>
-        <div class="swiper-container">
-            <!-- Additional required wrapper -->
-            <div class="swiper-wrapper">
-                <!-- Slides -->
-                <img class="swiper-slide" src="./img/canvas.jpg">
-                <img class="swiper-slide" src="./img/nav.jpg">
-                <img class="swiper-slide" src="./img/slides.jpg">
+        <div id="mySlides">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <img class="swiper-slide" src="./img/canvas.jpg">
+                    <img class="swiper-slide" src="./img/nav.jpg">
+                    <img class="swiper-slide" src="./img/slides.png">
+                </div>
+                <div class="swiper-pagination"></div>
             </div>
-            <!-- If we need pagination -->
-            <div class="swiper-pagination"></div>
-
-            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
         </div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
     </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/16.3.5/Tween.min.js"></script>
     <!-- 模块化 -->
