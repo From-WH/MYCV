@@ -193,104 +193,12 @@
         <div class="swiper-button-next"></div>
     </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/16.3.5/Tween.min.js"></script>
-    <script>
-        //实现进入页面的loading
-        setTimeout(function () {
-            sitewelcome.classList.remove('active')
-        }, 1000);          //loading动画1秒
-        setTimeout(function () {
-            yyy()
-        }, 1000);         // 内容浮动一秒内完成
-        let specialTags = document.querySelectorAll('[data-x]')  //返回[data-x]元素列表
-        for (let i = 0; i < specialTags.length; i++) {
-            specialTags[i].classList.add('offset')         // 当滑动到最近下一个一个元素时，触发标签上浮
-        }
-        //如何实现topNavBar的下拉后高亮
-        window.onscroll = function (xxx) {
-            if (window.scrollY > 0) {
-                TopNavBar.classList.add('stick')
-            } else {
-                TopNavBar.classList.remove('stick')
-            }
-            yyy()
-        }
-        // 高亮当前元素
-        function yyy() {
-            let specialTags = document.querySelectorAll('[data-x]')  //返回[data-x]元素列表
-            let minindex = 0
-            for (let i = 1; i < specialTags.length; i++) {
-                if (Math.abs(specialTags[i].offsetTop - window.scrollY) < Math.abs(specialTags[minindex].offsetTop - window.scrollY)) {
-                    minindex = i
-                }   // 距离窗口最近的元素
-            }
-            specialTags[minindex].classList.remove('offset')
-            let id = specialTags[minindex].id
-            let a = document.querySelector('a[href="#' + id + '"]')
-            let li = a.parentNode
-            let brotherAndMe = li.parentNode.children
-            for (let i = 0; i < brotherAndMe.length; i++) {
-                brotherAndMe[i].classList.remove('aaa')
-            }
-            li.classList.add('aaa')
-        }
-
-        //如何实现 鼠标悬停弹出菜单
-        let liTags = document.getElementsByClassName('menuTigger')
-        for (let i = 0; i < liTags.length; i++) {
-            liTags[i].onmouseenter = function (xx) {
-                xx.currentTarget.classList.add('active')
-            }
-            liTags[i].onmouseleave = function (xx) {
-                xx.currentTarget.classList.remove('active')
-            }
-        }
-        //如何实现页面跳转
-        let aTags = document.querySelectorAll('nav.menu > ul > li > a')
-        //这五行是抄的
-        function animate(time) {
-            requestAnimationFrame(animate);
-            TWEEN.update(time);
-        }
-        requestAnimationFrame(animate);
-        for (let i = 0; i < aTags.length; i++) {
-            aTags[i].onclick = function (x) {
-                x.preventDefault() //阻止默认动作
-                let a = x.currentTarget //获取点击元素
-                let href = a.getAttribute('href') // 'siteAbout'
-                let element = document.querySelector(href)
-                let top = element.offsetTop
-                let currentTop = window.scrollY     //文档在垂直方向已滚动的像素值
-                let targetTop = top - 80            //需要跳转到的位置
-                let s = targetTop - currentTop      // 位置差=跳转的位置-跳转前的位置
-                var coords = { y: currentTop };     //跳转前的视口的位置
-                let t = Math.abs((s / 100) * 500)   // 跳转像素每增加100px 就增加300毫秒
-                if (t > 800) { t = 800 }            // 跳转的时间
-                var tween = new TWEEN.Tween(coords)  // 获得目前视口位置
-                    .to({ y: targetTop }, t)          //跳转的位置及需要的时间
-                    .easing(TWEEN.Easing.Quadratic.Out)  //抄的，跳转形式
-                    .onUpdate(function () {              //更新后的update 调用
-                        window.scrollTo(0, coords.y)     //跳转的位置
-                    })
-                    .start();        //   立即开始跳转
-            }
-        }
-    </script>
-    <script>
-        var mySwiper = new Swiper('.swiper-container', {
-            loop: true,
-
-            // If we need pagination
-            pagination: {
-                el: '.swiper-pagination',
-            },
-
-            // Navigation arrows
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-        })
-    </script>
+    <!-- 模块化 -->
+    <script src="./js/loading.js"></script>
+    <script src="./js/init-swiper.js"></script>
+    <script src="./js/auto-slides-up.js"></script>
+    <script src="./js/stick-topbar.js"></script>
+    <script src="./js/smoothly-navigtion.js"></script>
 </body>
 
 </html>

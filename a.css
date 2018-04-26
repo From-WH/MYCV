@@ -327,33 +327,6 @@ body .portfolio h2{
     font-weight: bold;
     margin-bottom: 35px;
 }
-body .portfolio > nav{
-    text-align: center;
-    display: inline-block;
-}
-body .portfolio > nav > ol{
-    display: inline-block;
-}
-body .portfolio > nav > ol >li{
-    cursor: pointer;
-    float: left;
-    margin-left: 44px;
-}
-body .portfolio > nav > ol >li:nth-child(1){
-    margin-left: 0;
-}
-body .portfolio > nav .bar{
-    background: white;
-    height: 4px;
-    margin-bottom: 36px;
-}
-body .portfolio > nav .bar .bartwo{
-    background: rgb(232,103,107);
-    height: 100%;
-    width: 20%;
-    border-radius: 3px;
-    transition: all 0.4s;
-}
 body .portfolio > nav .bar.state-1 .bartwo{
     width: 20%;
 }
@@ -388,22 +361,4 @@ body .portfolio > nav .bar.state-3 .bartwo{
     margin-left: -70px;
     background-color: white;
     margin-top: 13px;
-}
-.portfolio .jobs{
-    position: relative;
-    height: 576px;
-}
-.portfolio .jobs > .big2{
-    position: absolute;
-
-}
-.portfolio .jobs > .small{
-    position: absolute;
-    top: 0;
-    left: 627px;
-}
-.portfolio .jobs >.small2{
-    position: absolute;
-    top: 298px;
-    left: 627px;
 }
