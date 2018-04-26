@@ -349,6 +349,7 @@ body .portfolio > nav .bar.state-3 .bartwo{
     width: 60px;
     height: 60px;
     border-radius: 50%;
+    border-color: transparent;
     background-color: white;
     margin-top: 13px;
 }
