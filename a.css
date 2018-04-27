@@ -366,13 +366,28 @@ body .portfolio > nav .bar.state-3 .bartwo{
     margin-top: 13px;
 }
 .h3{
-    margin-left: 350px;
+    text-align: center;
+    font-size: 32px;
+}
+.message > h3 {
+    font-size: 34px;
+    font-style: inherit;
+    font-weight: bold;
+    margin-bottom: 35px;
+}
+.message > ol{
+    max-width: 700px;
+    margin: 0 auto;
+    border-top: 1px solid #DDD;
 }
 .postMessage{
     width: 700px;
-    margin: 50px auto;
+    margin: 30px auto;
+    margin-bottom: 100px;
 }
 #messageList>li{
-    border: 1px solid black;
-    margin: 2px 350px;
+    padding: 16px;
+    border-bottom: 1px solid #DDD;
+    overflow: hidden;
+    word-break:break-all;
 }
