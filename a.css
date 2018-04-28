@@ -389,7 +389,6 @@ body .portfolio > nav .bar.state-3 .bartwo{
     width: 700px;
     margin: 30px auto;
     margin-bottom: 100px;
-    text-align: center;
 }
 #messageList>li{
     padding: 16px;
@@ -400,4 +399,32 @@ body .portfolio > nav .bar.state-3 .bartwo{
 }
 #messageList>:last-child{
     border-bottom-color: transparent;
+}
+.labelTwo{
+    margin-bottom: 10px;
+}
+.input1,.input2{
+    outline: none;
+    border-radius: 5px;
+    font-size: 1em;
+    line-height: 1.5em;
+    padding: 5px;
+    resize: none;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Microsoft YaHei, Source Han Sans SC, Noto Sans CJK SC, WenQuanYi Micro Hei, sans-serif;
+    border: 1px solid #777;
+    margin-right: 20px;
+}
+.input2{
+    margin-top: 14px;
+}
+.input3{
+    float: right;
+    margin-top: 90px;
+    margin-right: 70px;
+    border: none;
+    padding:5px 8px;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #FFF;
+    background: #496fe4;
 }
