@@ -64,7 +64,7 @@
             let myForm = this.form
             let content = myForm.querySelector('textarea[name=content]').value
             let name = myForm.querySelector('input[name=name]').value
-            if (content!=='' && name !== '') {
+            if (content.length > 0 && name.length > 0 && name.length !== undefined && content.length !== undefined ) {
                 this.model.save(name, content).then(function (object) {
                     let li = document.createElement('li')
                     li.innerText = `${object.attributes.name}:${object.attributes.content}`
@@ -72,6 +72,8 @@
                     messageList.append(li)
                     myForm.querySelector('textarea[name=content]').value = ''
                 })               
+            } else{
+                alert('亲~记得输入昵称和内容喔~')
             }
 
         }
