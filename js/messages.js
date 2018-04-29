@@ -64,7 +64,7 @@
             let myForm = this.form
             let content = myForm.querySelector('textarea[name=content]').value
             let name = myForm.querySelector('input[name=name]').value
-            if (content.length > 0 && name.length > 0 && name.length !== undefined && content.length !== undefined ) {
+            if (content.length > 0 && name.length > 0 && name.trim().length !== 0 && content.trim().length !== 0 ) {
                 this.model.save(name, content).then(function (object) {
                     let li = document.createElement('li')
                     li.innerText = `${object.attributes.name}:${object.attributes.content}`
