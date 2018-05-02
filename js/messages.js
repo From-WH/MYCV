@@ -1,6 +1,5 @@
 !function () {
 
-
     var model = {
         init: function () {
             var APP_ID = 'U42NTGFfgjD4gP4pmr1pBCaS-gzGzoHsz';
