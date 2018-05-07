@@ -355,6 +355,9 @@ body .portfolio > nav .bar.state-3 .bartwo{
     background-color: white;
     margin-top: 13px;
 }
+.portfolio .swiper-button-prev:focus{
+    outline: none;
+}
 .portfolio .swiper-button-next{
     left: 100%;
     right: auto;
@@ -364,6 +367,9 @@ body .portfolio > nav .bar.state-3 .bartwo{
     margin-left: -70px;
     background-color: white;
     margin-top: 13px;
+}
+.portfolio .swiper-button-next:focus{
+    outline: none;
 }
 .h3{
     text-align: center;
