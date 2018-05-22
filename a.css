@@ -138,17 +138,18 @@ hr{
     display: block;
 }
 .TopNavBar .logo{
-    float: left;
     font-size: 24px;
-    font-family: Arial black;
-    padding-top: 5px;
+    font-family: 'Arial Black';
+    font-weight: bold;
+    padding-top: 3px;
+    padding-bottom: 4px;
+    margin-left: 16px;
 }
 .TopNavBar .logo .rs{
-    color: red;
-    margin-right: 4px;
+    margin-right: 4px; color: #e6686a;
 }
 .TopNavBar .logo .card{
-    color: rgb(154,167,162);
+    color: #9a9da2;
 }
 .banner{
     background-image: url(./img/backgroundpicture.jpg);
