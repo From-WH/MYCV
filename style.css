@@ -190,8 +190,10 @@ hr{
     position: absolute;
     top: 100%
 }
-.usercard .picture{
+.usercard .picture > img{
     float: left;
+    width: 299px;
+    height: 347px;
 }
 .profile{
     float: left;
